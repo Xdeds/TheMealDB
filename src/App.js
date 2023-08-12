@@ -1,24 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import CategoryResult from './components/project/CategoryResult';
+import Main from './components/project/Main';
+import {Routes, Route} from 'react-router-dom'
+import SearchResult from './components/project/SearchResult';
+import Description from './components/project/Description';
+import Letter from './components/project/Letter';
+import RandomMeals from './components/project/RandomMeals';
+import Ingerdient from './components/project/Ingerdient';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path='/' element={<Main/>}/>
+        <Route path='/categoryresult' element={<CategoryResult/>}/>
+        <Route path='/searchresult' element={<SearchResult/>}/>
+        <Route path='/mealsdescription' element={<Description/>}/>
+        <Route path='/letter' element={<Letter/>}/>
+        <Route path='/random' element={<RandomMeals/>}/>
+        <Route path='/ingerdient' element={<Ingerdient/>}/>
+      </Routes>
+    </>
   );
 }
 
